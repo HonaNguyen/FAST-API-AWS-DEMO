@@ -1,13 +1,22 @@
 from fastapi import FastAPI
 import uvicorn
-from basemodel import request_body
+from pydantic import BaseModel
+from pathlib import Path
 import joblib
 
 # Call constructor and assign to variable app
 app = FastAPI()
 
+# Load base_dir
+BASE_DIR = Path(__file__).resolve(strict=True).parent
+
 # Load pre-trained model
-model = joblib.load("model.pkl")
+with open(f"{BASE_DIR}/model.pkl", "rb") as file:
+    model = joblib.load(file)
+
+
+class request_body(BaseModel):
+    YearsExperiences: float
 
 
 # The root route
