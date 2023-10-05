@@ -1,0 +1,6 @@
+First Admin Jenkins User
+Username: anhnh2210-jenkins
+Password: hona@otto1600
+Fullname: Nguyen Hoang Anh
+Email: nguyenhoanganh20033@gmail.com
+Link: http://3.12.148.168:8080/
